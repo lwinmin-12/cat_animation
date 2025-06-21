@@ -1,19 +1,21 @@
-// app/page.tsx or pages/index.tsx
 "use client";
-
 import Image from "next/image";
 import SocialMediaLogo from "./SocialMedialLogo";
-import { Player as Lottie } from "@lottiefiles/react-lottie-player";
-
 import HomeAnimation from "@/assets/lottie/BordFix.json";
 import MobileHomeAnimation from "@/assets/lottie/BordFix1.json";
 
 import WalkingPerson from "@/assets/lottie/walkingPerson.json";
 
 import viewCollectionImage from "@/assets/image/socail/viewCollection.svg";
-import initialLoadingImage from "@/assets/image/animated/animatedLoadingMan.webp";
 import { useEffect, useState } from "react";
 import CatImageElement from "./CatSlide";
+
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then((mod) => mod.Player),
+  { ssr: false }
+);
 
 export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);

@@ -1,17 +1,16 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import logo from "@/assets/image/logo/logoImage.svg";
 import BlodAnimation from "@/assets/lottie/blob.json";
-import { Player as Lottie } from "@lottiefiles/react-lottie-player";
+import Lottie from 'lottie-react';
 
 const SecondPage = () => {
   return (
     <div className="container relative  mx-auto overflow-hidden bg-white">
       <div className="absolute inset-0 z-0 w-[200%] lg:w-[130%] h-full">
         <Lottie
-          src={BlodAnimation}
-          background="transparent"
-          speed={1}
+          animationData={BlodAnimation}
           loop
           autoplay
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
